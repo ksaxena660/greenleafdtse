@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenLeaf Organics - Your Local Organic Grocery Store in Hyderabad</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #333;
+            background-color: #f7fbeb;
+        }
+        .section-padding {
+            padding: 4rem 1rem;
+        }
+        @media (min-width: 768px) {
+            .section-padding {
+                padding: 6rem 4rem;
+            }
+        }
+        /* Snowflake animation for the hero section */
+        .hero-section-with-snow {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .snowflake {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: snowfall linear infinite;
+        }
+
+        @keyframes snowfall {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .snowflake:nth-child(1) { left: 5%; animation-duration: 15s; animation-delay: 0s; width: 4px; height: 4px; }
+        .snowflake:nth-child(2) { left: 15%; animation-duration: 20s; animation-delay: 2s; width: 6px; height: 6px; }
+        .snowflake:nth-child(3) { left: 25%; animation-duration: 18s; animation-delay: 4s; width: 5px; height: 5px; }
+        .snowflake:nth-child(4) { left: 35%; animation-duration: 16s; animation-delay: 6s; width: 7px; height: 7px; }
+        .snowflake:nth-child(5) { left: 45%; animation-duration: 22s; animation-delay: 8s; width: 4px; height: 4px; }
+        .snowflake:nth-child(6) { left: 55%; animation-duration: 17s; animation-delay: 10s; width: 6px; height: 6px; }
+        .snowflake:nth-child(7) { left: 65%; animation-duration: 21s; animation-delay: 12s; width: 5px; height: 5px; }
+        .snowflake:nth-child(8) { left: 75%; animation-duration: 19s; animation-delay: 14s; width: 7px; height: 7px; }
+        .snowflake:nth-child(9) { left: 85%; animation-duration: 23s; animation-delay: 16s; width: 5px; height: 5px; }
+        .snowflake:nth-child(10) { left: 95%; animation-duration: 14s; animation-delay: 18s; width: 6px; height: 6px; }
+        
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-green-700">GreenLeaf Organics</a>
+            <nav class="hidden md:flex space-x-6 text-gray-700 font-medium">
+                <a href="#about" class="hover:text-green-600 transition-colors">About Us</a>
+                <a href="#products" class="hover:text-green-600 transition-colors">Products</a>
+                <a href="#why-organic" class="hover:text-green-600 transition-colors">Why Organic?</a>
+                <a href="#testimonials" class="hover:text-green-600 transition-colors">Testimonials</a>
+                <a href="#contact" class="hover:text-green-600 transition-colors">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-cover bg-center h-[70vh] md:h-[80vh] flex items-center justify-center text-white hero-section-with-snow" style="background-image: url('https://i.postimg.cc/NKtkTy5Z/fresh-vegetables-food.jpg');">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="container mx-auto px-4 text-center z-10">
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight tracking-tight">
+                GreenLeaf Organics
+            </h1>
+            <p class="mt-4 text-lg md:text-2xl font-medium max-w-2xl mx-auto">
+                Your Local Source for Fresh, Organic Goodness
+            </p>
+            <p class="mt-2 text-md md:text-xl max-w-3xl mx-auto opacity-90">
+                Nourish your family and support local farmers with our sustainably sourced, chemical-free groceries in Hyderabad.
+            </p>
+            <a href="#contact" class="mt-8 inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:scale-105">
+                Visit Us Today!
+            </a>
+        </div>
+        <!-- Snowflakes -->
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="section-padding bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-green-800 mb-4">About Us</h2>
+            <div class="flex flex-col md:flex-row items-center justify-center md:space-x-12">
+                <div class="md:w-1/2 mt-6 md:mt-0">
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        At GreenLeaf Organics, we believe in a healthier way of life. Our journey began with a simple mission: to provide our community with the purest, most nourishing organic products directly from the farm to your table. We are a family-run business dedicated to sustainable practices and supporting the local agricultural ecosystem right here in Hyderabad.
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Every item in our store is carefully selected to ensure it is free from harmful chemicals, pesticides, and GMOs. We work closely with a network of trusted local farmers who share our passion for ethical and eco-friendly cultivation. By choosing GreenLeaf Organics, you're not just buying groceries; you're investing in your family's health and the well-being of our planet.
+                    </p>
+                </div>
+                <div class="md:w-1/3 mt-8 md:mt-0">
+                    <!-- Updated image for the owner/team -->
+                    <img src="https://i.postimg.cc/SXT6wDDp/organic-farmer.jpg" alt="Organic farmer smiling in a field" class="rounded-3xl shadow-lg border-4 border-white transform hover:scale-105 transition-transform duration-300">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="section-padding bg-green-50">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-green-800 mb-12">Our Products</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Product Category 1: Fresh Produce -->
+                <div class="bg-white p-6 rounded-2xl shadow-xl transform transition-transform hover:scale-105 duration-300">
+                    <img src="https://pramitgupta.github.io/GreenLeaf_New/images/B3.png" alt="Fresh Produce" class="w-full h-48 object-cover rounded-xl mb-4">
+                    <h3 class="text-xl font-semibold text-green-700">Fresh Produce</h3>
+                    <p class="text-gray-600 mt-2">Vibrant fruits and vegetables, hand-picked and delivered daily from local farms.</p>
+                </div>
+                <!-- Product Category 2: Pantry Staples -->
+                <div class="bg-white p-6 rounded-2xl shadow-xl transform transition-transform hover:scale-105 duration-300">
+                    <img src="https://pramitgupta.github.io/GreenLeaf_New/images/B1.png" alt="Pantry Staples" class="w-full h-48 object-cover rounded-xl mb-4">
+                    <h3 class="text-xl font-semibold text-green-700">Pantry Staples</h3>
+                    <p class="text-gray-600 mt-2">High-quality grains, dals, and flours for a wholesome and nutritious kitchen.</p>
+                </div>
+                <!-- Product Category 3: Specialty Items -->
+                <div class="bg-white p-6 rounded-2xl shadow-xl transform transition-transform hover:scale-105 duration-300">
+                    <img src="https://pramitgupta.github.io/GreenLeaf_New/images/B2.png" alt="Specialty Items" class="w-full h-48 object-cover rounded-xl mb-4">
+                    <h3 class="text-xl font-semibold text-green-700">Specialty Items</h3>
+                    <p class="text-gray-600 mt-2">Cold-pressed oils, artisanal honey, and a variety of aromatic spices.</p>
+                </div>
+                <!-- Product Category 4: Dairy & Eggs -->
+                <div class="bg-white p-6 rounded-2xl shadow-xl transform transition-transform hover:scale-105 duration-300">
+                    <img src="https://pramitgupta.github.io/GreenLeaf_New/images/B4.png" alt="Dairy & Eggs" class="w-full h-48 object-cover rounded-xl mb-4">
+                    <h3 class="text-xl font-semibold text-green-700">Dairy & Eggs</h3>
+                    <p class="text-gray-600 mt-2">A selection of A2 milk, ghee, and free-range eggs from healthy, happy animals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Organic Section -->
+    <section id="why-organic" class="section-padding bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-green-800 mb-12">Why Choose Organic?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-6 bg-green-50 rounded-2xl shadow-xl">
+                    <div class="text-green-600 text-5xl mb-4">🌱</div>
+                    <h3 class="text-xl font-semibold mb-2">Healthier Choice</h3>
+                    <p class="text-gray-600">Our products are grown without synthetic pesticides or harmful chemicals, giving you and your family the purest nutrition available.</p>
+                </div>
+                <div class="p-6 bg-green-50 rounded-2xl shadow-xl">
+                    <div class="text-green-600 text-5xl mb-4">🌍</div>
+                    <h3 class="text-xl font-semibold mb-2">Better for the Planet</h3>
+                    <p class="text-gray-600">Organic farming methods promote biodiversity, conserve water, and reduce soil erosion, contributing to a healthier environment.</p>
+                </div>
+                <div class="p-6 bg-green-50 rounded-2xl shadow-xl">
+                    <div class="text-green-600 text-5xl mb-4">👩‍🌾</div>
+                    <h3 class="text-xl font-semibold mb-2">Supports Local Farmers</h3>
+                    <p class="text-gray-600">We work directly with local farmers, ensuring they receive fair compensation and empowering our community's agricultural growth.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section-padding bg-green-100">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-green-800 mb-12">What Our Customers Say</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <p class="text-lg italic text-gray-700 mb-4">
+                        "The quality of the produce at GreenLeaf Organics is unmatched. You can taste the difference! I love knowing that I'm feeding my family the best, most authentic food from trusted local sources."
+                    </p>
+                    <div class="flex items-center justify-center">
+                        <img src="https://placehold.co/60x60/82b189/ffffff?text=JP" alt="Customer Jane P." class="w-12 h-12 rounded-full mr-4 border-2 border-green-600">
+                        <span class="font-medium text-gray-800">Jane Patel, Gachibowli</span>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <p class="text-lg italic text-gray-700 mb-4">
+                        "I'm so glad I found this store. The staff is incredibly knowledgeable, and the selection is fantastic. It's truly a pleasure to shop here, and I feel great about supporting a business with such strong values."
+                    </p>
+                    <div class="flex items-center justify-center">
+                        <img src="https://placehold.co/60x60/82b189/ffffff?text=RK" alt="Customer Rahul K." class="w-12 h-12 rounded-full mr-4 border-2 border-green-600">
+                        <span class="font-medium text-gray-800">Rahul Kumar, Kondapur</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="section-padding bg-green-50 text-center">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-green-800 mb-8">
+                Learn About Organic Farming
+            </h2>
+            <p class="text-lg text-gray-700 max-w-2xl mx-auto mb-8">
+                Watch this video to understand the journey of organic food from our farms to your family's table.
+            </p>
+            <!-- Responsive video container for 16:9 aspect ratio -->
+            <div class="relative w-full overflow-hidden rounded-xl shadow-2xl" style="padding-top: 56.25%;">
+                <iframe 
+                    class="absolute top-0 left-0 w-full h-full" 
+                    src="https://www.youtube.com/embed/Vagc5qqm1_o" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-green-800 mb-8">Visit Us Today</h2>
+            <p class="text-lg text-gray-700 max-w-2xl mx-auto mb-8">
+                Ready to experience the GreenLeaf difference? We're excited to welcome you!
+            </p>
+
+            <!-- Google Maps Embed -->
+            <div class="w-full max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-xl mb-12">
+                <h3 class="text-2xl font-semibold text-green-700 pt-8 px-8">Find Us on the Map</h3>
+                <p class="text-gray-600 mt-2 mb-6 px-8">See our exact location and get directions easily.</p>
+                <div class="relative w-full overflow-hidden" style="padding-top: 50%;">
+                    <iframe 
+                        class="absolute top-0 left-0 w-full h-full" 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.75837269784!2d78.34963091480026!3d17.42442228805625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb945119747201%3A0x8e82a0b36c25368a!2sISB%20Road%2C%20Gachibowli%2C%20Hyderabad%2C%20Telangana%20500111%2C%20India!5e0!3m2!1sen!2sus!4v1628173507316!5m2!1sen!2sus" 
+                        width="600" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="p-6 rounded-2xl bg-green-50 shadow-lg">
+                    <div class="text-green-600 text-4xl mb-3">📍</div>
+                    <h3 class="text-xl font-semibold mb-2">Location</h3>
+                    <p class="text-gray-600">123, ISB Road, Gachibowli, Hyderabad, TG 500111</p>
+                    <a href="https://maps.google.com/?q=123+ISB+Road,+Gachibowli,+Hyderabad" target="_blank" rel="noopener noreferrer" class="text-green-600 font-medium mt-2 inline-block hover:underline">View on Map</a>
+                </div>
+                <div class="p-6 rounded-2xl bg-green-50 shadow-lg">
+                    <div class="text-green-600 text-4xl mb-3">📞</div>
+                    <h3 class="text-xl font-semibold mb-2">Phone</h3>
+                    <p class="text-gray-600">9412345678</p>
+                    <a href="tel:+919412345678" class="text-green-600 font-medium mt-2 inline-block hover:underline">Call Us</a>
+                </div>
+                <div class="p-6 rounded-2xl bg-green-50 shadow-lg">
+                    <div class="text-green-600 text-4xl mb-3">📧</div>
+                    <h3 class="text-xl font-semibold mb-2">Email</h3>
+                    <p class="text-gray-600">greenleaf.organics@dtse.com</p>
+                    <a href="mailto:greenleaf.organics@dtse.com" class="text-green-600 font-medium mt-2 inline-block hover:underline">Email Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-green-800 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex justify-center space-x-6 mb-4 text-xl">
+                <a href="#" class="hover:text-green-300 transition-colors">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.25 12c0-5.46-4.51-9.85-10.05-9.85C6.7 2.15 2.5 6.49 2.5 12.02c0 4.96 3.65 9.02 8.44 9.77V15.5h-2.54V12h2.54v-1.72c0-2.51 1.49-3.89 3.77-3.89 1.09 0 2.24.19 2.24.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.77l-.44 3.5h-2.33v6.28C17.92 21.43 22.25 17.07 22.25 12z"></path></svg>
+                </a>
+                <a href="#" class="hover:text-green-300 transition-colors">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.2 0 3.58.01 4.85.07 3.25.17 4.77 1.58 4.94 4.85.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.17 3.25-1.58 4.77-4.85 4.94-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-3.25-.17-4.77-1.58-4.94-4.85-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.17-3.25 1.58-4.77 4.85-4.94 1.27-.06 1.65-.07 4.85-.07zM12 0C8.74 0 8.32.01 7.04.07 3.79.24 1.24 2.79 1.07 6.04.01 7.32 0 7.74 0 11s.01 3.68.07 4.96c.17 3.25 2.72 5.8 5.96 5.96 1.28.06 1.7.07 4.96.07s3.68-.01 4.96-.07c3.25-.17 5.8-2.72 5.96-5.96.06-1.28.07-1.7.07-4.96s-.01-3.68-.07-4.96c-.17-3.25-2.72-5.8-5.96-5.96C15.68 0 15.26.01 12 0zm0 4.14A7.86 7.86 0 1019.86 12 7.86 7.86 0 0012 4.14zM12 6.64A5.36 5.36 0 116.64 12 5.36 5.36 0 0112 6.64zm7.14-.64a1.8 1.8 0 11-1.8 1.8 1.8 1.8 0 011.8-1.8z"></path></svg>
+                </a>
+            </div>
+            <p class="text-sm text-gray-300">&copy; 2025 GreenLeaf Organics. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
