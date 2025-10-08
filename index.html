@@ -13,17 +13,17 @@
             font-family: 'Inter', sans-serif;
         }
         .gradient-text {
-            background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+            background: linear-gradient(135deg, #3b82f6 0%, #10b981 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
         .glow-button {
-            box-shadow: 0 0 20px rgba(6, 182, 212, 0.4);
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
             transition: all 0.3s ease;
         }
         .glow-button:hover {
-            box-shadow: 0 0 30px rgba(6, 182, 212, 0.6);
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.8);
             transform: translateY(-2px);
         }
         .card-hover {
@@ -31,350 +31,324 @@
         }
         .card-hover:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(6, 182, 212, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        .slider-container input[type="range"] {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 8px;
+            border-radius: 5px;
+            background: #1e293b;
+            outline: none;
+        }
+        .slider-container input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #3b82f6;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.7);
+        }
+        .slider-container input[type="range"]::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #3b82f6;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.7);
         }
     </style>
 </head>
-<body class="bg-slate-950 text-gray-100">
-
-    <!-- Header & Navigation -->
-    <header class="border-b border-slate-800 bg-slate-950/80 backdrop-blur-sm sticky top-0 z-50">
-        <div class="container mx-auto px-4 sm:px-6 py-4">
-            <div class="flex items-center justify-between">
-                <div class="flex items-center space-x-2">
-                    <svg class="w-8 h-8 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
-                    </svg>
-                    <span class="text-2xl font-bold gradient-text">PredictionMart</span>
-                </div>
-                <nav class="hidden md:flex space-x-8 text-sm font-medium">
-                    <a href="#how-it-works" class="text-gray-400 hover:text-cyan-500 transition">How It Works</a>
-                    <a href="#calculator" class="text-gray-400 hover:text-cyan-500 transition">Calculator</a>
-                    <a href="#examples" class="text-gray-400 hover:text-cyan-500 transition">Examples</a>
-                </nav>
+<body class="bg-slate-950 text-white">
+    
+    <!-- Header & Hero Section -->
+    <header class="border-b border-slate-800">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <svg class="w-8 h-8 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4V7zm-1-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                </svg>
+                <span class="text-2xl font-bold">Prediction<span class="gradient-text">Mart</span></span>
             </div>
-        </div>
+            <div class="hidden md:flex space-x-6 text-sm">
+                <a href="#how-it-works" class="hover:text-blue-400 transition">How It Works</a>
+                <a href="#calculator" class="hover:text-blue-400 transition">Calculator</a>
+                <a href="#examples" class="hover:text-blue-400 transition">Examples</a>
+            </div>
+        </nav>
     </header>
 
     <!-- Hero Section -->
-    <section class="relative overflow-hidden py-20 sm:py-32">
-        <div class="absolute inset-0 bg-gradient-to-br from-cyan-900/20 via-slate-950 to-blue-900/20"></div>
-        <div class="container mx-auto px-4 sm:px-6 relative z-10">
+    <section class="relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-slate-950 to-emerald-900/20"></div>
+        <div class="container mx-auto px-6 py-24 md:py-32 relative z-10">
             <div class="max-w-4xl mx-auto text-center">
-                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
                     Trade the Future.<br/>
                     <span class="gradient-text">Not the Past.</span>
                 </h1>
-                <p class="text-xl sm:text-2xl text-gray-400 mb-4">Asia's Premier Prediction Market</p>
-                <p class="text-lg text-gray-500 mb-10 max-w-2xl mx-auto">
-                    Harness collective intelligence to forecast global events. From technology launches to geopolitical shifts, turn your insights into profits.
+                <p class="text-xl md:text-2xl text-slate-300 mb-10">
+                    Asia's Premier Prediction Market
                 </p>
-                <button class="glow-button bg-cyan-500 hover:bg-cyan-600 text-slate-950 font-bold py-4 px-8 rounded-lg text-lg">
+                <button class="glow-button bg-blue-600 hover:bg-blue-700 text-white font-semibold px-10 py-4 rounded-lg text-lg">
                     Launch Demo (Coming Soon)
                 </button>
+                <p class="text-sm text-slate-400 mt-6">Operating from Dubai & Singapore</p>
             </div>
         </div>
     </section>
 
     <!-- Customer Segments -->
-    <section class="py-16 sm:py-24 bg-slate-900/50">
-        <div class="container mx-auto px-4 sm:px-6">
-            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-16">Who We Serve</h2>
-            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                
+    <section class="py-20 bg-slate-900/50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16">Who <span class="gradient-text">Benefits</span></h2>
+            <div class="grid md:grid-cols-3 gap-8">
                 <!-- Segment 1 -->
-                <div class="card-hover bg-slate-800 border border-slate-700 rounded-xl p-8">
-                    <div class="w-16 h-16 bg-cyan-500/10 rounded-lg flex items-center justify-center mb-6">
-                        <svg class="w-8 h-8 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                <div class="card-hover bg-slate-800/50 border border-slate-700 rounded-xl p-8">
+                    <div class="w-16 h-16 bg-blue-500/20 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">The Financial Analyst</h3>
-                    <p class="text-gray-400">Quantitative professionals seeking alternative data sources for investment decisions. Use prediction markets to gauge sentiment on corporate events, economic indicators, and market movements.</p>
+                    <h3 class="text-2xl font-bold mb-4">The Financial Analyst</h3>
+                    <p class="text-slate-300">Sophisticated traders seeking to monetize proprietary research and market insights on corporate events, economic indicators, and policy decisions.</p>
                 </div>
-
+                
                 <!-- Segment 2 -->
-                <div class="card-hover bg-slate-800 border border-slate-700 rounded-xl p-8">
-                    <div class="w-16 h-16 bg-blue-500/10 rounded-lg flex items-center justify-center mb-6">
-                        <svg class="w-8 h-8 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                <div class="card-hover bg-slate-800/50 border border-slate-700 rounded-xl p-8">
+                    <div class="w-16 h-16 bg-emerald-500/20 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">The Geopolitical Strategist</h3>
-                    <p class="text-gray-400">Policy experts and consultants tracking elections, regulations, and international relations. Access real-time probability assessments on political outcomes that impact business strategy.</p>
+                    <h3 class="text-2xl font-bold mb-4">The Geopolitical Strategist</h3>
+                    <p class="text-slate-300">Policy experts and international affairs specialists leveraging deep domain knowledge to forecast elections, diplomatic outcomes, and regulatory changes.</p>
                 </div>
-
+                
                 <!-- Segment 3 -->
-                <div class="card-hover bg-slate-800 border border-slate-700 rounded-xl p-8">
-                    <div class="w-16 h-16 bg-purple-500/10 rounded-lg flex items-center justify-center mb-6">
-                        <svg class="w-8 h-8 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                <div class="card-hover bg-slate-800/50 border border-slate-700 rounded-xl p-8">
+                    <div class="w-16 h-16 bg-purple-500/20 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">The Casual Futurist</h3>
-                    <p class="text-gray-400">Tech enthusiasts and curious minds who follow innovation trends. Trade on product launches, breakthrough technologies, and cultural phenomena while learning about probabilistic thinking.</p>
+                    <h3 class="text-2xl font-bold mb-4">The Casual Futurist</h3>
+                    <p class="text-slate-300">Tech enthusiasts and curious minds exploring future trends in AI, space exploration, and innovation while earning returns on informed predictions.</p>
                 </div>
-
             </div>
         </div>
     </section>
 
     <!-- Definitional Preliminaries -->
-    <section id="how-it-works" class="py-16 sm:py-24">
-        <div class="container mx-auto px-4 sm:px-6">
+    <section id="how-it-works" class="py-20 bg-slate-950">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16">What Is a <span class="gradient-text">Prediction Market?</span></h2>
             <div class="max-w-4xl mx-auto">
-                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">What Are Prediction Markets?</h2>
-                
-                <div class="bg-slate-800 border border-slate-700 rounded-xl p-8 sm:p-10 mb-12">
-                    <p class="text-lg text-gray-300 mb-8 leading-relaxed">
-                        A <strong class="text-cyan-500">prediction market</strong> is a trading platform where participants buy and sell shares representing the outcome of future events. Unlike traditional stock markets that reflect past performance, prediction markets aggregate collective wisdom to forecast what <em>will happen</em>.
+                <div class="bg-slate-800/50 border border-slate-700 rounded-xl p-8 md:p-12 mb-12">
+                    <p class="text-lg md:text-xl text-slate-200 mb-8 leading-relaxed">
+                        A prediction market is a financial exchange where participants buy and sell contracts tied to the outcome of future events. Unlike traditional markets that trade existing assets, prediction markets enable you to <span class="font-bold text-blue-400">trade on future outcomes</span> — from product launches to election results.
                     </p>
-                    
-                    <div class="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border-l-4 border-cyan-500 p-6 rounded-r-lg mb-8">
-                        <h3 class="text-2xl font-bold mb-4 flex items-center">
-                            <svg class="w-6 h-6 mr-2 text-cyan-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
-                            </svg>
-                            Core Concept: Price = Probability
-                        </h3>
-                        <p class="text-lg text-gray-200 mb-4">
-                            Each share trades between <strong>$0.00</strong> and <strong>$1.00</strong>, and the current market price directly represents the crowd's estimated probability of the event occurring.
-                        </p>
-                        <div class="space-y-3">
-                            <div class="flex items-center space-x-4">
-                                <span class="text-2xl font-bold text-cyan-400">$0.75</span>
-                                <span class="text-gray-400">=</span>
-                                <span class="text-xl text-gray-200">75% probability</span>
-                            </div>
-                            <div class="flex items-center space-x-4">
-                                <span class="text-2xl font-bold text-cyan-400">$0.30</span>
-                                <span class="text-gray-400">=</span>
-                                <span class="text-xl text-gray-200">30% probability</span>
-                            </div>
-                            <div class="flex items-center space-x-4">
-                                <span class="text-2xl font-bold text-cyan-400">$0.05</span>
-                                <span class="text-gray-400">=</span>
-                                <span class="text-xl text-gray-200">5% probability</span>
-                            </div>
-                        </div>
-                        <p class="text-gray-300 mt-6">
-                            <strong>If the event occurs:</strong> Each "Yes" share pays out <strong class="text-green-400">$1.00</strong><br/>
-                            <strong>If the event fails:</strong> "Yes" shares are worth <strong class="text-red-400">$0.00</strong>
-                        </p>
+                    <div class="bg-gradient-to-r from-blue-900/40 to-emerald-900/40 border-l-4 border-blue-500 p-6 rounded-lg">
+                        <h3 class="text-2xl font-bold mb-4">The Core Principle: Price = Probability</h3>
+                        <p class="text-lg mb-4">Each contract trades between <span class="font-bold text-white">$0.00 and $1.00</span>, with the price directly reflecting the market's collective belief in the event occurring:</p>
+                        <ul class="space-y-3 text-slate-200">
+                            <li class="flex items-start">
+                                <span class="text-blue-400 font-bold mr-3">•</span>
+                                <span><span class="font-bold">$0.75</span> share price = <span class="font-bold text-emerald-400">75% probability</span> the event happens</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-400 font-bold mr-3">•</span>
+                                <span><span class="font-bold">$0.25</span> share price = <span class="font-bold text-orange-400">25% probability</span> the event happens</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-400 font-bold mr-3">•</span>
+                                <span>If the event occurs, <span class="font-bold">YES</span> shares pay <span class="font-bold text-green-400">$1.00</span> each</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-400 font-bold mr-3">•</span>
+                                <span>If the event doesn't occur, <span class="font-bold">NO</span> shares pay <span class="font-bold text-green-400">$1.00</span> each</span>
+                            </li>
+                        </ul>
                     </div>
-
-                    <p class="text-gray-400">
-                        This mechanism incentivizes accurate forecasting: traders profit by moving prices toward true probabilities. The result is a dynamic, real-time consensus that often outperforms traditional polls and expert predictions.
-                    </p>
-                </div>
-
-                <!-- Operational Steps -->
-                <h3 class="text-2xl font-bold text-center mb-10">How to Participate</h3>
-                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    
-                    <!-- Step 1 -->
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-cyan-500/10 rounded-full flex items-center justify-center mx-auto mb-4 border-2 border-cyan-500">
-                            <span class="text-2xl font-bold text-cyan-500">1</span>
-                        </div>
-                        <h4 class="font-bold mb-2">Sign Up</h4>
-                        <p class="text-sm text-gray-400">Create your account with email verification and KYC compliance</p>
-                    </div>
-
-                    <!-- Step 2 -->
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-cyan-500/10 rounded-full flex items-center justify-center mx-auto mb-4 border-2 border-cyan-500">
-                            <span class="text-2xl font-bold text-cyan-500">2</span>
-                        </div>
-                        <h4 class="font-bold mb-2">Deposit Funds</h4>
-                        <p class="text-sm text-gray-400">Add USD via bank transfer, credit card, or cryptocurrency</p>
-                    </div>
-
-                    <!-- Step 3 -->
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-cyan-500/10 rounded-full flex items-center justify-center mx-auto mb-4 border-2 border-cyan-500">
-                            <span class="text-2xl font-bold text-cyan-500">3</span>
-                        </div>
-                        <h4 class="font-bold mb-2">Buy/Sell Contracts</h4>
-                        <p class="text-sm text-gray-400">Trade on events you have insight into at current market prices</p>
-                    </div>
-
-                    <!-- Step 4 -->
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-cyan-500/10 rounded-full flex items-center justify-center mx-auto mb-4 border-2 border-cyan-500">
-                            <span class="text-2xl font-bold text-cyan-500">4</span>
-                        </div>
-                        <h4 class="font-bold mb-2">Settle</h4>
-                        <p class="text-sm text-gray-400">Receive payouts automatically when events resolve</p>
-                    </div>
-
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Payoff Calculator Widget -->
-    <section id="calculator" class="py-16 sm:py-24 bg-slate-900/50">
-        <div class="container mx-auto px-4 sm:px-6">
-            <div class="max-w-3xl mx-auto">
-                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4">Calculate Your Edge</h2>
-                <p class="text-center text-gray-400 mb-12">See your potential returns before you trade</p>
+    <!-- Operational Details -->
+    <section class="py-20 bg-slate-900/50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16">How to <span class="gradient-text">Get Started</span></h2>
+            <div class="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                <!-- Step 1 -->
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-3xl font-bold text-blue-400">1</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Sign Up</h3>
+                    <p class="text-slate-300">Create your account with secure KYC verification</p>
+                </div>
                 
-                <div class="bg-slate-800 border border-slate-700 rounded-xl p-8 sm:p-10">
-                    
-                    <!-- Share Price Input -->
-                    <div class="mb-8">
-                        <label class="block text-sm font-medium mb-3">
-                            Share Purchase Price: <span id="priceDisplay" class="text-cyan-500 font-bold">$0.50</span>
-                        </label>
-                        <input 
-                            type="range" 
-                            id="sharePrice" 
-                            min="0.05" 
-                            max="0.95" 
-                            step="0.01" 
-                            value="0.50"
-                            class="w-full h-3 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-cyan-500"
-                        >
-                        <div class="flex justify-between text-xs text-gray-500 mt-2">
-                            <span>$0.05 (5%)</span>
-                            <span>$0.50 (50%)</span>
-                            <span>$0.95 (95%)</span>
+                <!-- Step 2 -->
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-emerald-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-3xl font-bold text-emerald-400">2</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Deposit Funds</h3>
+                    <p class="text-slate-300">Fund your wallet via bank transfer or crypto</p>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-purple-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-3xl font-bold text-purple-400">3</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Buy/Sell Contracts</h3>
+                    <p class="text-slate-300">Trade on events you have insights about</p>
+                </div>
+                
+                <!-- Step 4 -->
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-orange-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-3xl font-bold text-orange-400">4</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Settle</h3>
+                    <p class="text-slate-300">Collect winnings when events resolve</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payoff Calculator -->
+    <section id="calculator" class="py-20 bg-slate-950">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-4">Calculate Your <span class="gradient-text">Edge</span></h2>
+            <p class="text-center text-slate-400 mb-12 text-lg">See potential returns before you trade</p>
+            
+            <div class="max-w-2xl mx-auto bg-slate-800/50 border border-slate-700 rounded-xl p-8 md:p-12">
+                <div class="space-y-8">
+                    <!-- Purchase Price Slider -->
+                    <div class="slider-container">
+                        <label class="block text-lg font-semibold mb-4">Share Purchase Price</label>
+                        <input type="range" id="purchasePrice" min="0.05" max="0.95" step="0.01" value="0.50" 
+                               class="w-full mb-3">
+                        <div class="flex justify-between items-center">
+                            <span class="text-slate-400">$0.05</span>
+                            <span id="priceDisplay" class="text-2xl font-bold text-blue-400">$0.50</span>
+                            <span class="text-slate-400">$0.95</span>
+                        </div>
+                        <p class="text-sm text-slate-400 mt-2 text-center">Implied Probability: <span id="probabilityDisplay" class="font-semibold text-emerald-400">50%</span></p>
+                    </div>
+
+                    <!-- Investment Amount -->
+                    <div>
+                        <label class="block text-lg font-semibold mb-3" for="investmentAmount">Investment Amount (USD)</label>
+                        <div class="relative">
+                            <span class="absolute left-4 top-1/2 transform -translate-y-1/2 text-slate-400 text-xl">$</span>
+                            <input type="number" id="investmentAmount" placeholder="100" 
+                                   class="w-full bg-slate-900 border border-slate-600 rounded-lg px-12 py-4 text-xl focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50 transition"
+                                   min="0" step="0.01">
                         </div>
                     </div>
 
-                    <!-- Investment Amount Input -->
-                    <div class="mb-8">
-                        <label for="investmentAmount" class="block text-sm font-medium mb-3">
-                            Investment Amount (USD)
-                        </label>
-                        <input 
-                            type="number" 
-                            id="investmentAmount" 
-                            placeholder="Enter amount (e.g., 100)"
-                            class="w-full bg-slate-700 border border-slate-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500"
-                        >
-                    </div>
-
                     <!-- Calculate Button -->
-                    <button 
-                        id="calculateBtn"
-                        class="w-full bg-cyan-500 hover:bg-cyan-600 text-slate-950 font-bold py-4 rounded-lg transition-all glow-button mb-6"
-                    >
+                    <button onclick="calculatePayoff()" 
+                            class="w-full bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-700 hover:to-emerald-700 text-white font-bold py-4 rounded-lg text-xl transition transform hover:scale-105">
                         Calculate Payoff
                     </button>
 
                     <!-- Output Area -->
-                    <div id="outputArea" class="hidden">
-                        <div class="bg-slate-700/50 border border-slate-600 rounded-lg p-6">
-                            <div class="space-y-4">
-                                <div class="flex justify-between items-center">
-                                    <span class="text-gray-400">Shares Purchased:</span>
-                                    <span id="sharesOutput" class="text-xl font-bold text-white"></span>
-                                </div>
-                                <div class="flex justify-between items-center">
-                                    <span class="text-gray-400">Potential Payout (if Yes):</span>
-                                    <span id="payoutOutput" class="text-xl font-bold text-green-400"></span>
-                                </div>
-                                <div class="flex justify-between items-center pt-4 border-t border-slate-600">
-                                    <span class="text-gray-300 font-medium">Potential Profit:</span>
-                                    <span id="profitOutput" class="text-2xl font-bold text-cyan-400"></span>
-                                </div>
-                            </div>
-                        </div>
+                    <div id="calculatorOutput" class="hidden mt-6 p-6 bg-slate-900 border border-slate-600 rounded-lg">
+                        <!-- Results will be inserted here -->
                     </div>
-
-                    <!-- Error Area -->
-                    <div id="errorArea" class="hidden">
-                        <div class="bg-red-900/20 border border-red-500 rounded-lg p-4">
-                            <div class="flex items-start">
-                                <svg class="w-5 h-5 text-red-500 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
-                                </svg>
-                                <p id="errorMessage" class="text-red-300 text-sm"></p>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Video Deep Dive -->
-    <section class="py-16 sm:py-24">
-        <div class="container mx-auto px-4 sm:px-6">
+    <section class="py-20 bg-slate-900/50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-4">Video <span class="gradient-text">Deep Dive</span></h2>
+            <p class="text-center text-slate-400 mb-12 text-lg">Learn how prediction markets are reshaping forecasting</p>
+            
             <div class="max-w-4xl mx-auto">
-                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4">Video Deep Dive</h2>
-                <p class="text-center text-gray-400 mb-12">Learn how prediction markets work and why they matter</p>
-                
-                <div class="relative aspect-video bg-slate-800 rounded-xl overflow-hidden shadow-2xl">
-                    <iframe 
-                        class="absolute inset-0 w-full h-full"
-                        src="https://www.youtube.com/embed/-Iw-nCNAlTg" 
-                        title="Prediction Markets Explained"
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen
-                    ></iframe>
+                <div class="relative pb-[56.25%] h-0 overflow-hidden rounded-xl border border-slate-700">
+                    <iframe class="absolute top-0 left-0 w-full h-full" 
+                            src="https://www.youtube.com/embed/-Iw-nCNAlTg" 
+                            title="Prediction Markets Explained" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Mock X Post Embed -->
-    <section class="py-16 sm:py-24 bg-slate-900/50">
-        <div class="container mx-auto px-4 sm:px-6">
+    <!-- Mock X/Twitter Embed -->
+    <section class="py-20 bg-slate-950">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12">Real-Time <span class="gradient-text">Market Signals</span></h2>
+            
             <div class="max-w-2xl mx-auto">
-                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4">Real-Time Event Tracking</h2>
-                <p class="text-center text-gray-400 mb-12">Follow breaking news that moves markets</p>
-                
-                <!-- Mock Twitter/X Post -->
-                <div class="bg-slate-800 border border-slate-700 rounded-xl p-6 card-hover">
-                    <div class="flex items-start space-x-4">
-                        <!-- Profile Picture -->
-                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-cyan-500 to-blue-500 flex-shrink-0 flex items-center justify-center text-white font-bold text-lg">
-                            EM
+                <div class="bg-slate-900 border border-slate-700 rounded-xl p-6 hover:border-slate-600 transition">
+                    <!-- Header -->
+                    <div class="flex items-start space-x-3 mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center flex-shrink-0">
+                            <span class="text-xl font-bold">EM</span>
                         </div>
-                        
                         <div class="flex-1">
-                            <!-- Header -->
-                            <div class="flex items-center space-x-2 mb-3">
-                                <span class="font-bold text-white">Elon Musk</span>
-                                <svg class="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            <div class="flex items-center space-x-2">
+                                <span class="font-bold text-lg">Elon Musk</span>
+                                <svg class="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                                 </svg>
-                                <span class="text-gray-500">@elonmusk</span>
-                                <span class="text-gray-600">·</span>
-                                <span class="text-gray-500 text-sm">Oct 5, 2025</span>
                             </div>
-                            
-                            <!-- Tweet Content -->
-                            <p class="text-gray-200 mb-4 leading-relaxed">
-                                Starship Flight 7 is go for launch next week. Full stack integration complete. This time we're attempting the orbital refueling demonstration - critical milestone for deep space missions. 🚀
-                            </p>
-                            
-                            <!-- Engagement Stats -->
-                            <div class="flex items-center space-x-6 text-gray-500 text-sm">
-                                <div class="flex items-center space-x-2 hover:text-cyan-500 cursor-pointer transition">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
-                                    </svg>
-                                    <span>1.2K</span>
-                                </div>
-                                <div class="flex items-center space-x-2 hover:text-green-500 cursor-pointer transition">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
-                                    </svg>
-                                    <span>8.4K</span>
-                                </div>
-                                <div class="flex items-center space-x-2 hover:text-red-500 cursor-pointer transition">
-                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path>
-                                    </svg>
-                                    <span>42.8K</span>
-                                </div>
-                            </div>
+                            <span class="text-slate-400">@elonmusk</span>
+                        </div>
+                        <svg class="w-6 h-6 text-slate-400" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M23.643 4.937c-.835.37-1.732.62-2.675.733.962-.576 1.7-1.49 2.048-2.578-.9.534-1.897.922-2.958 1.13-.85-.904-2.06-1.47-3.4-1.47-2.572 0-4.658 2.086-4.658 4.66 0 .364.042.718.12 1.06-3.873-.195-7.304-2.05-9.602-4.868-.4.69-.63 1.49-.63 2.342 0 1.616.823 3.043 2.072 3.878-.764-.025-1.482-.234-2.11-.583v.06c0 2.257 1.605 4.14 3.737 4.568-.392.106-.803.162-1.227.162-.3 0-.593-.028-.877-.082.593 1.85 2.313 3.198 4.352 3.234-1.595 1.25-3.604 1.995-5.786 1.995-.376 0-.747-.022-1.112-.065 2.062 1.323 4.51 2.093 7.14 2.093 8.57 0 13.255-7.098 13.255-13.254 0-.2-.005-.402-.014-.602.91-.658 1.7-1.477 2.323-2.41z"/>
+                        </svg>
+                    </div>
+                    
+                    <!-- Content -->
+                    <div class="mb-4">
+                        <p class="text-lg leading-relaxed">Starship Flight Test 6 targeting launch next week. Major improvements to heat shield and engine reliability. This one's going to orbit. 🚀</p>
+                    </div>
+                    
+                    <!-- Metadata -->
+                    <div class="flex items-center space-x-1 text-slate-400 text-sm mb-4">
+                        <span>4:23 PM</span>
+                        <span>·</span>
+                        <span>Oct 1, 2025</span>
+                        <span>·</span>
+                        <span class="font-semibold text-white">2.4M</span>
+                        <span>Views</span>
+                    </div>
+                    
+                    <!-- Engagement -->
+                    <div class="flex items-center space-x-8 pt-4 border-t border-slate-700 text-slate-400">
+                        <div class="flex items-center space-x-2 hover:text-blue-400 transition cursor-pointer">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                            </svg>
+                            <span class="font-semibold">18.2K</span>
+                        </div>
+                        <div class="flex items-center space-x-2 hover:text-emerald-400 transition cursor-pointer">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                            </svg>
+                            <span class="font-semibold">45.8K</span>
+                        </div>
+                        <div class="flex items-center space-x-2 hover:text-pink-400 transition cursor-pointer">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                            </svg>
+                            <span class="font-semibold">156K</span>
                         </div>
                     </div>
                 </div>
@@ -383,204 +357,188 @@
     </section>
 
     <!-- Hypothetical Transaction Examples -->
-    <section id="examples" class="py-16 sm:py-24">
-        <div class="container mx-auto px-4 sm:px-6">
-            <div class="max-w-5xl mx-auto">
-                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4">Real-World Scenarios</h2>
-                <p class="text-center text-gray-400 mb-16">Step-by-step walkthroughs of actual trades</p>
-
-                <!-- Example 1: SpaceX Starship -->
-                <div class="bg-slate-800 border border-slate-700 rounded-xl p-8 sm:p-10 mb-10 card-hover">
-                    <div class="flex items-start space-x-4 mb-6">
-                        <div class="w-12 h-12 bg-green-500/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                            <span class="text-2xl">🚀</span>
+    <section id="examples" class="py-20 bg-slate-900/50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16">Real <span class="gradient-text">Trade Examples</span></h2>
+            
+            <div class="max-w-5xl mx-auto space-y-12">
+                <!-- Example 1: SpaceX -->
+                <div class="bg-slate-800/50 border border-slate-700 rounded-xl p-8 md:p-10">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
                         </div>
-                        <div>
-                            <h3 class="text-2xl font-bold mb-2">Example 1: The SpaceX Starship Launch</h3>
-                            <p class="text-cyan-500 font-medium">Referencing the X post above</p>
-                        </div>
+                        <h3 class="text-2xl font-bold">Example 1: The SpaceX Starship Launch</h3>
                     </div>
-
-                    <div class="bg-slate-900/50 rounded-lg p-6 mb-6">
-                        <h4 class="font-bold text-lg mb-3">Market Event:</h4>
-                        <p class="text-gray-300 text-lg">"Will Starship Flight 7 successfully achieve orbital refueling by October 15, 2025?"</p>
+                    
+                    <div class="bg-slate-900/50 border border-slate-600 rounded-lg p-6 mb-6">
+                        <p class="text-lg font-semibold text-blue-400 mb-2">Event:</p>
+                        <p class="text-xl">"Will Starship successfully achieve orbit in its next launch window?"</p>
                     </div>
-
-                    <div class="space-y-6">
-                        <div>
-                            <h4 class="font-semibold text-cyan-500 mb-2">The Scenario:</h4>
-                            <p class="text-gray-300">After reading Elon Musk's post on X about the upcoming Starship Flight 7 launch, you believe the market is underpricing the probability of success. The current market price is $0.40 per share, but you think SpaceX has a much better chance than 40% based on their recent improvements and the confidence in Musk's announcement.</p>
-                        </div>
-
-                        <div class="grid sm:grid-cols-2 gap-6">
-                            <div class="bg-slate-700/50 rounded-lg p-5">
-                                <h5 class="font-semibold mb-3 text-cyan-400">Trade Details:</h5>
-                                <ul class="space-y-2 text-sm text-gray-300">
-                                    <li><span class="text-gray-500">Purchase Price:</span> <span class="font-bold">$0.40/share</span></li>
-                                    <li><span class="text-gray-500">Investment:</span> <span class="font-bold">$200.00</span></li>
-                                    <li><span class="text-gray-500">Shares Purchased:</span> <span class="font-bold">500 shares</span></li>
-                                </ul>
+                    
+                    <div class="space-y-4 mb-6">
+                        <p class="text-slate-300 leading-relaxed">
+                            <span class="font-semibold text-white">Scenario:</span> You see Elon Musk's post above about Starship Flight Test 6, noting major improvements to the heat shield and engine reliability. Based on SpaceX's track record and these technical upgrades, you believe the market is underestimating success probability.
+                        </p>
+                        
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-slate-900 border border-slate-700 rounded-lg p-4">
+                                <p class="text-sm text-slate-400 mb-1">Your Purchase Price</p>
+                                <p class="text-2xl font-bold text-blue-400">$0.40 per share</p>
+                                <p class="text-xs text-slate-500 mt-1">(Market implies 40% chance)</p>
                             </div>
-
-                            <div class="bg-slate-700/50 rounded-lg p-5">
-                                <h5 class="font-semibold mb-3 text-green-400">Outcome: SUCCESS ✓</h5>
-                                <ul class="space-y-2 text-sm text-gray-300">
-                                    <li><span class="text-gray-500">Final Payout:</span> <span class="font-bold text-green-400">$500.00</span></li>
-                                    <li><span class="text-gray-500">Initial Investment:</span> <span class="font-bold">$200.00</span></li>
-                                    <li><span class="text-gray-500">Net Profit:</span> <span class="font-bold text-cyan-400 text-lg">+$300.00</span></li>
-                                </ul>
+                            <div class="bg-slate-900 border border-slate-700 rounded-lg p-4">
+                                <p class="text-sm text-slate-400 mb-1">Investment Amount</p>
+                                <p class="text-2xl font-bold">$400.00</p>
                             </div>
                         </div>
-
-                        <div class="bg-green-900/20 border-l-4 border-green-500 p-4 rounded-r-lg">
-                            <p class="text-green-300 text-sm">
-                                <strong>Result:</strong> On October 12, 2025, Starship Flight 7 successfully completed orbital refueling, marking a historic milestone. Your 500 "Yes" shares each paid out $1.00, returning $500 total on your $200 investment - a 150% return in just one week.
-                            </p>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-slate-900 to-slate-800 border border-slate-700 rounded-lg p-6 mb-6">
+                        <p class="font-semibold text-lg mb-3">The Math:</p>
+                        <ul class="space-y-2 text-slate-300">
+                            <li>• Shares Purchased: $400 ÷ $0.40 = <span class="font-bold text-white">1,000 shares</span></li>
+                            <li>• Cost Basis: <span class="font-bold text-white">$400.00</span></li>
+                            <li>• Potential Payout (if successful): 1,000 shares × $1.00 = <span class="font-bold text-emerald-400">$1,000.00</span></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-emerald-900/30 border-l-4 border-emerald-500 rounded-r-lg p-6">
+                        <p class="text-lg font-semibold text-emerald-400 mb-2">✓ Outcome: SUCCESS!</p>
+                        <p class="text-slate-300 mb-4">Starship achieves stable orbit. All YES shares settle at $1.00.</p>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <p class="text-sm text-slate-400">Total Payout</p>
+                                <p class="text-2xl font-bold text-white">$1,000.00</p>
+                            </div>
+                            <div>
+                                <p class="text-sm text-slate-400">Net Profit</p>
+                                <p class="text-2xl font-bold text-emerald-400">+$600.00</p>
+                            </div>
                         </div>
+                        <p class="text-sm text-slate-400 mt-3">ROI: <span class="font-bold text-emerald-400">150%</span></p>
                     </div>
                 </div>
 
                 <!-- Example 2: Apple AI Phone -->
-                <div class="bg-slate-800 border border-slate-700 rounded-xl p-8 sm:p-10 mb-10 card-hover">
-                    <div class="flex items-start space-x-4 mb-6">
-                        <div class="w-12 h-12 bg-red-500/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                            <span class="text-2xl">📱</span>
+                <div class="bg-slate-800/50 border border-slate-700 rounded-xl p-8 md:p-10">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                            </svg>
                         </div>
-                        <div>
-                            <h3 class="text-2xl font-bold mb-2">Example 2: The Apple AI Phone</h3>
-                            <p class="text-cyan-500 font-medium">Referencing the Deep Dive video</p>
-                        </div>
+                        <h3 class="text-2xl font-bold">Example 2: The Apple AI Phone</h3>
                     </div>
-
-                    <div class="bg-slate-900/50 rounded-lg p-6 mb-6">
-                        <h4 class="font-bold text-lg mb-3">Market Event:</h4>
-                        <p class="text-gray-300 text-lg">"Will Apple release an AI-focused iPhone model by June 30, 2025?"</p>
+                    
+                    <div class="bg-slate-900/50 border border-slate-600 rounded-lg p-6 mb-6">
+                        <p class="text-lg font-semibold text-purple-400 mb-2">Event:</p>
+                        <p class="text-xl">"Will Apple release an AI-focused iPhone model by June 2025?"</p>
                     </div>
-
-                    <div class="space-y-6">
-                        <div>
-                            <h4 class="font-semibold text-cyan-500 mb-2">The Scenario:</h4>
-                            <p class="text-gray-300">After watching the video deep dive on prediction markets and AI trends, you become convinced that Apple will fast-track their AI hardware release to compete with Google and Samsung. Industry rumors suggest a spring announcement. The market price is $0.80, but you believe it's almost certain (90%+) to happen, making this an undervalued opportunity.</p>
-                        </div>
-
-                        <div class="grid sm:grid-cols-2 gap-6">
-                            <div class="bg-slate-700/50 rounded-lg p-5">
-                                <h5 class="font-semibold mb-3 text-cyan-400">Trade Details:</h5>
-                                <ul class="space-y-2 text-sm text-gray-300">
-                                    <li><span class="text-gray-500">Purchase Price:</span> <span class="font-bold">$0.80/share</span></li>
-                                    <li><span class="text-gray-500">Investment:</span> <span class="font-bold">$400.00</span></li>
-                                    <li><span class="text-gray-500">Shares Purchased:</span> <span class="font-bold">500 shares</span></li>
-                                </ul>
+                    
+                    <div class="space-y-4 mb-6">
+                        <p class="text-slate-300 leading-relaxed">
+                            <span class="font-semibold text-white">Scenario:</span> After watching the video deep dive above on prediction markets and researching Apple's development timeline, you believe the company will accelerate its AI hardware roadmap. The market price seems low given recent Apple AI announcements.
+                        </p>
+                        
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-slate-900 border border-slate-700 rounded-lg p-4">
+                                <p class="text-sm text-slate-400 mb-1">Your Purchase Price</p>
+                                <p class="text-2xl font-bold text-purple-400">$0.80 per share</p>
+                                <p class="text-xs text-slate-500 mt-1">(Market implies 80% chance)</p>
                             </div>
-
-                            <div class="bg-slate-700/50 rounded-lg p-5">
-                                <h5 class="font-semibold mb-3 text-red-400">Outcome: FAILURE ✗</h5>
-                                <ul class="space-y-2 text-sm text-gray-300">
-                                    <li><span class="text-gray-500">Final Payout:</span> <span class="font-bold text-red-400">$0.00</span></li>
-                                    <li><span class="text-gray-500">Initial Investment:</span> <span class="font-bold">$400.00</span></li>
-                                    <li><span class="text-gray-500">Net Loss:</span> <span class="font-bold text-red-400 text-lg">-$400.00</span></li>
-                                </ul>
+                            <div class="bg-slate-900 border border-slate-700 rounded-lg p-4">
+                                <p class="text-sm text-slate-400 mb-1">Investment Amount</p>
+                                <p class="text-2xl font-bold">$800.00</p>
                             </div>
                         </div>
-
-                        <div class="bg-red-900/20 border-l-4 border-red-500 p-4 rounded-r-lg">
-                            <p class="text-red-300 text-sm">
-                                <strong>Result:</strong> At Apple's June 2025 WWDC, they announced enhanced AI features in iOS but did not release a dedicated AI-focused iPhone model. The specialized hardware was delayed to Fall 2025. Your shares expired worthless, resulting in a total loss of your $400 investment. The market was correctly pricing the uncertainty.
-                            </p>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-slate-900 to-slate-800 border border-slate-700 rounded-lg p-6 mb-6">
+                        <p class="font-semibold text-lg mb-3">The Math:</p>
+                        <ul class="space-y-2 text-slate-300">
+                            <li>• Shares Purchased: $800 ÷ $0.80 = <span class="font-bold text-white">1,000 shares</span></li>
+                            <li>• Cost Basis: <span class="font-bold text-white">$800.00</span></li>
+                            <li>• Potential Payout (if successful): 1,000 shares × $1.00 = <span class="font-bold text-emerald-400">$1,000.00</span></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-red-900/30 border-l-4 border-red-500 rounded-r-lg p-6">
+                        <p class="text-lg font-semibold text-red-400 mb-2">✗ Outcome: FAILURE</p>
+                        <p class="text-slate-300 mb-4">Apple delays AI iPhone to Q4 2025. YES shares expire worthless at $0.00.</p>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <p class="text-sm text-slate-400">Total Payout</p>
+                                <p class="text-2xl font-bold text-white">$0.00</p>
+                            </div>
+                            <div>
+                                <p class="text-sm text-slate-400">Net Loss</p>
+                                <p class="text-2xl font-bold text-red-400">-$800.00</p>
+                            </div>
                         </div>
+                        <p class="text-sm text-slate-400 mt-3">ROI: <span class="font-bold text-red-400">-100%</span></p>
                     </div>
                 </div>
 
-                <!-- Example 3: Bonus Scenario -->
-                <div class="bg-slate-800 border border-slate-700 rounded-xl p-8 sm:p-10 card-hover">
-                    <div class="flex items-start space-x-4 mb-6">
-                        <div class="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                            <span class="text-2xl">⚖️</span>
+                <!-- Example 3: Federal Reserve Decision -->
+                <div class="bg-slate-800/50 border border-slate-700 rounded-xl p-8 md:p-10">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
                         </div>
-                        <div>
-                            <h3 class="text-2xl font-bold mb-2">Example 3: The Regulatory Approval</h3>
-                            <p class="text-cyan-500 font-medium">Risk management in action</p>
-                        </div>
+                        <h3 class="text-2xl font-bold">Example 3: Fed Interest Rate Cut</h3>
                     </div>
-
-                    <div class="bg-slate-900/50 rounded-lg p-6 mb-6">
-                        <h4 class="font-bold text-lg mb-3">Market Event:</h4>
-                        <p class="text-gray-300 text-lg">"Will the EU approve comprehensive AI regulation by December 31, 2025?"</p>
+                    
+                    <div class="bg-slate-900/50 border border-slate-600 rounded-lg p-6 mb-6">
+                        <p class="text-lg font-semibold text-emerald-400 mb-2">Event:</p>
+                        <p class="text-xl">"Will the Federal Reserve cut interest rates by 50+ basis points in November 2025?"</p>
                     </div>
-
-                    <div class="space-y-6">
-                        <div>
-                            <h4 class="font-semibold text-cyan-500 mb-2">The Scenario:</h4>
-                            <p class="text-gray-300">You work in policy consulting and have insider knowledge (publicly available) that the EU Parliament has fast-tracked AI legislation. Current market price is $0.25, which you believe significantly undervalues the probability. However, you also understand the political complexity, so you invest conservatively.</p>
-                        </div>
-
-                        <div class="grid sm:grid-cols-2 gap-6">
-                            <div class="bg-slate-700/50 rounded-lg p-5">
-                                <h5 class="font-semibold mb-3 text-cyan-400">Trade Details:</h5>
-                                <ul class="space-y-2 text-sm text-gray-300">
-                                    <li><span class="text-gray-500">Purchase Price:</span> <span class="font-bold">$0.25/share</span></li>
-                                    <li><span class="text-gray-500">Investment:</span> <span class="font-bold">$100.00</span></li>
-                                    <li><span class="text-gray-500">Shares Purchased:</span> <span class="font-bold">400 shares</span></li>
-                                </ul>
+                    
+                    <div class="space-y-4 mb-6">
+                        <p class="text-slate-300 leading-relaxed">
+                            <span class="font-semibold text-white">Scenario:</span> As a financial analyst, you've studied the Fed's recent communications and economic data. You believe inflation data will surprise to the downside, forcing a larger cut than the market expects.
+                        </p>
+                        
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="bg-slate-900 border border-slate-700 rounded-lg p-4">
+                                <p class="text-sm text-slate-400 mb-1">Your Purchase Price</p>
+                                <p class="text-2xl font-bold text-emerald-400">$0.35 per share</p>
+                                <p class="text-xs text-slate-500 mt-1">(Market implies 35% chance)</p>
                             </div>
-
-                            <div class="bg-slate-700/50 rounded-lg p-5">
-                                <h5 class="font-semibold mb-3 text-green-400">Outcome: SUCCESS ✓</h5>
-                                <ul class="space-y-2 text-sm text-gray-300">
-                                    <li><span class="text-gray-500">Final Payout:</span> <span class="font-bold text-green-400">$400.00</span></li>
-                                    <li><span class="text-gray-500">Initial Investment:</span> <span class="font-bold">$100.00</span></li>
-                                    <li><span class="text-gray-500">Net Profit:</span> <span class="font-bold text-cyan-400 text-lg">+$300.00</span></li>
-                                </ul>
+                            <div class="bg-slate-900 border border-slate-700 rounded-lg p-4">
+                                <p class="text-sm text-slate-400 mb-1">Investment Amount</p>
+                                <p class="text-2xl font-bold">$1,750.00</p>
                             </div>
                         </div>
-
-                        <div class="bg-green-900/20 border-l-4 border-green-500 p-4 rounded-r-lg">
-                            <p class="text-green-300 text-sm">
-                                <strong>Result:</strong> The EU AI Act was formally approved on November 15, 2025, ahead of schedule. Your disciplined approach to position sizing meant that even though this was a high-conviction trade, you didn't overexpose yourself. The 300% return on a modest investment demonstrates how prediction markets reward accurate forecasting without requiring massive capital.
-                            </p>
-                        </div>
                     </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Key Takeaways -->
-    <section class="py-16 sm:py-24 bg-slate-900/50">
-        <div class="container mx-auto px-4 sm:px-6">
-            <div class="max-w-4xl mx-auto">
-                <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">Key Takeaways</h2>
-                
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-cyan-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <svg class="w-8 h-8 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="font-bold mb-2">Information Edge Wins</h3>
-                        <p class="text-sm text-gray-400">Success comes from superior analysis, not luck. Markets reward accurate forecasting.</p>
+                    
+                    <div class="bg-gradient-to-r from-slate-900 to-slate-800 border border-slate-700 rounded-lg p-6 mb-6">
+                        <p class="font-semibold text-lg mb-3">The Math:</p>
+                        <ul class="space-y-2 text-slate-300">
+                            <li>• Shares Purchased: $1,750 ÷ $0.35 = <span class="font-bold text-white">5,000 shares</span></li>
+                            <li>• Cost Basis: <span class="font-bold text-white">$1,750.00</span></li>
+                            <li>• Potential Payout (if successful): 5,000 shares × $1.00 = <span class="font-bold text-emerald-400">$5,000.00</span></li>
+                        </ul>
                     </div>
-
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-yellow-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <svg class="w-8 h-8 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
-                            </svg>
+                    
+                    <div class="bg-emerald-900/30 border-l-4 border-emerald-500 rounded-r-lg p-6">
+                        <p class="text-lg font-semibold text-emerald-400 mb-2">✓ Outcome: SUCCESS!</p>
+                        <p class="text-slate-300 mb-4">Fed announces 50 basis point cut citing weaker-than-expected CPI. YES shares settle at $1.00.</p>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <p class="text-sm text-slate-400">Total Payout</p>
+                                <p class="text-2xl font-bold text-white">$5,000.00</p>
+                            </div>
+                            <div>
+                                <p class="text-sm text-slate-400">Net Profit</p>
+                                <p class="text-2xl font-bold text-emerald-400">+$3,250.00</p>
+                            </div>
                         </div>
-                        <h3 class="font-bold mb-2">Risk Management Matters</h3>
-                        <p class="text-sm text-gray-400">Even high-probability events can fail. Proper position sizing protects capital.</p>
-                    </div>
-
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-purple-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <svg class="w-8 h-8 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="font-bold mb-2">Speed Creates Value</h3>
-                        <p class="text-sm text-gray-400">Early movers capture the best prices before the crowd adjusts probabilities.</p>
+                        <p class="text-sm text-slate-400 mt-3">ROI: <span class="font-bold text-emerald-400">186%</span></p>
                     </div>
                 </div>
             </div>
@@ -588,131 +546,160 @@
     </section>
 
     <!-- Footer CTA -->
-    <section class="py-20 sm:py-32">
-        <div class="container mx-auto px-4 sm:px-6">
-            <div class="max-w-3xl mx-auto text-center">
-                <h2 class="text-3xl sm:text-5xl font-bold mb-6">Ready to Trade the Future?</h2>
-                <p class="text-xl text-gray-400 mb-10">Join Asia's most sophisticated prediction market platform</p>
-                <button class="glow-button bg-cyan-500 hover:bg-cyan-600 text-slate-950 font-bold py-4 px-10 rounded-lg text-lg mb-6">
-                    Get Early Access
-                </button>
-                <p class="text-sm text-gray-500">Launching Q1 2026 • Singapore & Dubai</p>
-            </div>
+    <section class="py-20 bg-gradient-to-br from-blue-900/30 via-slate-950 to-emerald-900/30">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to Trade Tomorrow?</h2>
+            <p class="text-xl text-slate-300 mb-10 max-w-2xl mx-auto">
+                Join the future of forecasting. PredictionMart launches Q1 2026.
+            </p>
+            <button class="glow-button bg-blue-600 hover:bg-blue-700 text-white font-semibold px-10 py-4 rounded-lg text-lg mb-8">
+                Join Waitlist
+            </button>
+            <p class="text-sm text-slate-400">Regulated. Secure. Transparent.</p>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="border-t border-slate-800 py-12 bg-slate-900/50">
-        <div class="container mx-auto px-4 sm:px-6">
-            <div class="max-w-6xl mx-auto">
-                <div class="grid md:grid-cols-4 gap-8 mb-8">
-                    <div>
-                        <div class="flex items-center space-x-2 mb-4">
-                            <svg class="w-6 h-6 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
-                            </svg>
-                            <span class="text-lg font-bold gradient-text">PredictionMart</span>
-                        </div>
-                        <p class="text-sm text-gray-500">Asia's premier prediction market platform for the future-focused trader.</p>
-                    </div>
-                    
-                    <div>
-                        <h4 class="font-semibold mb-4">Product</h4>
-                        <ul class="space-y-2 text-sm text-gray-500">
-                            <li><a href="#" class="hover:text-cyan-500 transition">How It Works</a></li>
-                            <li><a href="#" class="hover:text-cyan-500 transition">Markets</a></li>
-                            <li><a href="#" class="hover:text-cyan-500 transition">Pricing</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div>
-                        <h4 class="font-semibold mb-4">Company</h4>
-                        <ul class="space-y-2 text-sm text-gray-500">
-                            <li><a href="#" class="hover:text-cyan-500 transition">About</a></li>
-                            <li><a href="#" class="hover:text-cyan-500 transition">Blog</a></li>
-                            <li><a href="#" class="hover:text-cyan-500 transition">Careers</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div>
-                        <h4 class="font-semibold mb-4">Legal</h4>
-                        <ul class="space-y-2 text-sm text-gray-500">
-                            <li><a href="#" class="hover:text-cyan-500 transition">Terms</a></li>
-                            <li><a href="#" class="hover:text-cyan-500 transition">Privacy</a></li>
-                            <li><a href="#" class="hover:text-cyan-500 transition">Compliance</a></li>
-                        </ul>
-                    </div>
+    <footer class="border-t border-slate-800 py-8">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <span class="text-xl font-bold">Prediction<span class="gradient-text">Mart</span></span>
+                    <p class="text-slate-400 text-sm mt-1">© 2025 PredictionMart. All rights reserved.</p>
                 </div>
-                
-                <div class="border-t border-slate-800 pt-8 text-center text-sm text-gray-500">
-                    <p>&copy; 2025 PredictionMart. All rights reserved. | Licensed in Singapore</p>
+                <div class="flex space-x-6 text-sm text-slate-400">
+                    <a href="#" class="hover:text-blue-400 transition">Privacy</a>
+                    <a href="#" class="hover:text-blue-400 transition">Terms</a>
+                    <a href="#" class="hover:text-blue-400 transition">Contact</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript for Calculator -->
     <script>
-        // Update price display when slider moves
-        const priceSlider = document.getElementById('sharePrice');
+        // Update price display and probability in real-time as slider moves
+        const priceSlider = document.getElementById('purchasePrice');
         const priceDisplay = document.getElementById('priceDisplay');
-        
+        const probabilityDisplay = document.getElementById('probabilityDisplay');
+
         priceSlider.addEventListener('input', function() {
-            priceDisplay.textContent = ' + parseFloat(this.value).toFixed(2);
+            const price = parseFloat(this.value);
+            priceDisplay.textContent = ' + price.toFixed(2);
+            probabilityDisplay.textContent = (price * 100).toFixed(0) + '%';
         });
 
         // Calculate Payoff Function
-        document.getElementById('calculateBtn').addEventListener('click', function() {
+        function calculatePayoff() {
             // Get input values
-            const sharePrice = parseFloat(document.getElementById('sharePrice').value);
+            const purchasePrice = parseFloat(document.getElementById('purchasePrice').value);
             const investmentAmount = parseFloat(document.getElementById('investmentAmount').value);
-            
-            // Get output areas
-            const outputArea = document.getElementById('outputArea');
-            const errorArea = document.getElementById('errorArea');
-            const errorMessage = document.getElementById('errorMessage');
-            
-            // Hide both areas initially
-            outputArea.classList.add('hidden');
-            errorArea.classList.add('hidden');
-            
-            // Validation: Check if investment amount is valid
-            if (isNaN(investmentAmount) || investmentAmount <= 0) {
-                errorMessage.textContent = 'Please enter a valid investment amount greater than $0.';
-                errorArea.classList.remove('hidden');
+            const outputDiv = document.getElementById('calculatorOutput');
+
+            // Input validation
+            if (!investmentAmount || investmentAmount <= 0 || isNaN(investmentAmount)) {
+                outputDiv.className = 'mt-6 p-6 bg-red-900/30 border border-red-500 rounded-lg';
+                outputDiv.innerHTML = `
+                    <div class="flex items-start space-x-3">
+                        <svg class="w-6 h-6 text-red-400 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        <div>
+                            <p class="font-semibold text-red-400 text-lg mb-1">Invalid Investment Amount</p>
+                            <p class="text-slate-300">Please enter a valid investment amount greater than $0.</p>
+                        </div>
+                    </div>
+                `;
+                outputDiv.classList.remove('hidden');
                 return;
             }
-            
-            // Calculate shares (round down to whole number)
-            const shares = Math.floor(investmentAmount / sharePrice);
-            
+
+            // Calculate shares (rounded down to whole number)
+            const shares = Math.floor(investmentAmount / purchasePrice);
+
             // Check if shares is zero
             if (shares === 0) {
-                errorMessage.textContent = 'Your investment amount ( + investmentAmount.toFixed(2) + ') is less than the share price ( + sharePrice.toFixed(2) + '). Please increase your investment to purchase at least one share.';
-                errorArea.classList.remove('hidden');
+                outputDiv.className = 'mt-6 p-6 bg-orange-900/30 border border-orange-500 rounded-lg';
+                outputDiv.innerHTML = `
+                    <div class="flex items-start space-x-3">
+                        <svg class="w-6 h-6 text-orange-400 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                        </svg>
+                        <div>
+                            <p class="font-semibold text-orange-400 text-lg mb-1">Investment Too Small</p>
+                            <p class="text-slate-300">Your investment of <span class="font-bold">${investmentAmount.toFixed(2)}</span> is less than the share price of <span class="font-bold">${purchasePrice.toFixed(2)}</span>.</p>
+                            <p class="text-slate-300 mt-2">Increase your investment to at least <span class="font-bold">${purchasePrice.toFixed(2)}</span> to purchase 1 share.</p>
+                        </div>
+                    </div>
+                `;
+                outputDiv.classList.remove('hidden');
                 return;
             }
-            
+
             // Calculate payouts
             const potentialPayout = shares * 1.00;
             const potentialProfit = potentialPayout - investmentAmount;
-            
-            // Display results
-            document.getElementById('sharesOutput').textContent = shares.toLocaleString();
-            document.getElementById('payoutOutput').textContent = ' + potentialPayout.toFixed(2);
-            document.getElementById('profitOutput').textContent = ' + potentialProfit.toFixed(2);
-            
-            // Show output area
-            outputArea.classList.remove('hidden');
-        });
+            const roi = ((potentialProfit / investmentAmount) * 100).toFixed(1);
+
+            // Format currency
+            const formatCurrency = (amount) => {
+                return ' + amount.toFixed(2);
+            };
+
+            // Display success results
+            outputDiv.className = 'mt-6 p-6 bg-gradient-to-br from-emerald-900/30 to-blue-900/30 border border-emerald-500/50 rounded-lg';
+            outputDiv.innerHTML = `
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        <h3 class="text-xl font-bold text-emerald-400">Calculation Results</h3>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="bg-slate-900/50 rounded-lg p-4 border border-slate-700">
+                            <p class="text-sm text-slate-400 mb-1">Shares Purchased</p>
+                            <p class="text-2xl font-bold text-white">${shares.toLocaleString()}</p>
+                        </div>
+                        <div class="bg-slate-900/50 rounded-lg p-4 border border-slate-700">
+                            <p class="text-sm text-slate-400 mb-1">Total Investment</p>
+                            <p class="text-2xl font-bold text-white">${formatCurrency(investmentAmount)}</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-slate-900/70 rounded-lg p-5 border-2 border-emerald-500/50">
+                        <p class="text-sm text-slate-400 mb-2">If Event Occurs (YES wins):</p>
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <span class="text-slate-300">Potential Payout:</span>
+                                <span class="text-xl font-bold text-white">${formatCurrency(potentialPayout)}</span>
+                            </div>
+                            <div class="flex justify-between items-center pt-3 border-t border-slate-700">
+                                <span class="text-slate-300 font-semibold">Potential Profit:</span>
+                                <span class="text-2xl font-bold text-emerald-400">${formatCurrency(potentialProfit)}</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-slate-300">Return on Investment:</span>
+                                <span class="text-lg font-bold text-emerald-400">+${roi}%</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-red-900/20 rounded-lg p-4 border border-red-500/30">
+                        <p class="text-sm text-slate-400 mb-1">If Event Doesn't Occur (NO wins):</p>
+                        <p class="text-lg font-bold text-red-400">Loss: ${formatCurrency(investmentAmount)} (-100%)</p>
+                    </div>
+                </div>
+            `;
+            outputDiv.classList.remove('hidden');
+        }
 
         // Allow Enter key to trigger calculation
         document.getElementById('investmentAmount').addEventListener('keypress', function(event) {
             if (event.key === 'Enter') {
-                document.getElementById('calculateBtn').click();
+                calculatePayoff();
             }
         });
     </script>
-
 </body>
 </html>
